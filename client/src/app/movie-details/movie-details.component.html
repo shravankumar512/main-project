@@ -1,0 +1,53 @@
+
+<div class="row">
+  <div class="col-xs-3">
+    <img src="{{movie.movie_image}}" class="image" alt="photo" >  
+  </div>
+  <div class="col-xs-3">
+    <div class="text">
+      <h2><b>{{movie.name}}</b></h2>
+      <h3>{{movie.description}} </h3>
+      {{movie.rating}}/10<br>
+      {{movie.year}}
+    </div>
+  </div>
+</div>
+<hr style="color:gray">
+<div class="row">
+  <div class="col-xs-4">
+    
+    <h3>Actors:</h3>
+    <div class="text" *ngFor="let actor of movie.actors" (click)="onSelectActor(actor)">
+        {{actor}}
+    </div>
+
+    <h3>Directors:</h3>
+    <div class="text" *ngFor="let director of movie.directors" (click)="onSelectDirector(director)">
+      {{director}}
+    </div>
+
+  </div>
+
+  <div class="col-xs-8" *ngIf="isValidActor" >
+    <h1>Actor Details: </h1>
+      <div class="card">
+        <ul class="list-group" style="font-size: 20px">
+          <li class="list-group-item"> <i style="font-size: 15px"> Name </i> : <strong> {{actor.name}}</strong> </li>
+          <li class="list-group-item"> <i style="font-size: 15px"> Age </i> : <strong> {{actor.age}}</strong> </li>
+          <li class="list-group-item"> <i style="font-size: 15px"> Gender </i> : <strong> {{actor.gender}}</strong> </li>
+          <li class="list-group-item"> <i style="font-size: 15px"> Movies Acted </i> : <strong> {{actor.movies_acted}}</strong> </li>
+        </ul>
+      </div>
+  </div>
+  <div class="col-xs-8" *ngIf="isValidDirector" >
+    <h1>Director Details: </h1>
+      <div class="card">
+        <ul class="list-group" style="font-size: 20px">
+          <li class="list-group-item"> <i style="font-size: 15px"> Name </i> : <strong> {{director.name}}</strong> </li>
+          <li class="list-group-item"> <i style="font-size: 15px"> Age </i> : <strong> {{director.age}}</strong> </li>
+          <li class="list-group-item"> <i style="font-size: 15px"> Gender </i> : <strong> {{director.gender}}</strong> </li>
+          <li class="list-group-item"> <i style="font-size: 15px"> Movies Directed </i> : <strong> {{director.movies_directed}}</strong> </li>
+        </ul>
+      </div>
+  </div>
+</div>

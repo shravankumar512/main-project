@@ -1,0 +1,67 @@
+<div align="right">
+  <div class="">
+    <div class="form-group"  style="width:25%">
+        <input type="text" class="form-control" placeholder="Search.." [(ngModel)]='t1' value=""> 
+    </div>
+  </div>
+</div>
+ <div class="row">
+  <div class="col-xs-6">
+    <!-- <ul class="list-group">
+      <li class="list-group-item" class="card" *ngFor = "let movie of movies | UpdatePipe : t1" style="margin: 20px;padding: 20px;position: relative">
+        {{movie.name}}
+        <div style="float:right;margin:2px">
+          <button type="button" class="btn btn-sm btn-primary" (click)="onUpdate(movie)">update</button>
+          <button type="button" class="btn btn-sm btn-danger" (click)="deleteMovie(movie._id)">delete</button>
+        </div>
+      </li>
+    </ul> -->
+    <div class="card" *ngFor = "let movie of movies | UpdatePipe : t1 ">
+      <div class="card-content">
+        <div class="card-block">
+           <h4 class="card-title">{{movie.name}}   
+            <div style="float:right">
+              <button type="button" class="btn btn-sm btn-primary" (click)="onUpdate(movie)">update</button>
+              <button type="button" class="btn btn-sm btn-danger" (click)="deleteMovie(movie._id)">delete</button>
+            </div>
+          </h4> 
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+<div class="col-xs-6" *ngIf = "hide">
+<div style="border: 2px solid red;border-radius: 5px;padding:20px"  class="card">
+  <form method="post">
+      <div class="form-group">  
+        <input type="text" class="form-control" [(ngModel)]="name" name="name"  placeholder="{{movie.name}}">
+      </div>
+      <div class="form-group">  
+        <input type="text" class="form-control" [(ngModel)]="description" name="description"  placeholder="{{movie.description}}">
+      </div>
+      <div class="form-group">  
+        <input type="number" class="form-control" [(ngModel)]="year" name="year"  placeholder="{{movie.year}}">
+      </div>
+      <div class="form-group">  
+        <input type="number" class="form-control" [(ngModel)]="rating" name="rating"  placeholder="{{movie.rating}}">
+      </div>
+      <div class="form-group">  
+        <input type="text" class="form-control" [(ngModel)]="directors" name="directors"  placeholder="{{movie.directors}}">
+      </div>
+      <div class="form-group">  
+        <input type="text" class="form-control" [(ngModel)]="actors" name="actors"  placeholder="{{movie.actors}}">
+      </div>
+      <div class="form-group">  
+        <input type="text" class="form-control" [(ngModel)]="movie_image" name="movie_image"  placeholder="{{movie.movie_image}}">
+      </div>
+
+      <button type="button" class="btn btn-success" (click)="onUpdateMovie()">update</button>
+      
+      <button type="reset" class="btn btn-danger">clear</button>
+      
+    </form>
+
+    </div>
+  </div>
+</div>

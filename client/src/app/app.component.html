@@ -1,0 +1,25 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" routerLink="movie"> <b>Movies</b> </a>   
+  
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div *ngIf='!isLoggedIn'>
+      <ul class="navbar-nav mr-auto mt-2 mt-md-0 navbar-right">
+          <li class="nav-item"><a routerLink="signup"><span class="glyphicon glyphicon-user"></span> Sign Up  </a></li>
+          <li class="nav-item"><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+    <div *ngIf='isLoggedIn'>
+      <ul class="navbar-nav mr-auto mt-2 mt-md-0 navbar-right">
+          <li class="nav-item"><a routerLink="user"><span class="glyphicon glyphicon-user"></span> {{username}}</a></li>
+          <li class="nav-item"><a (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top: 50px">
+  <router-outlet></router-outlet>
+</div>

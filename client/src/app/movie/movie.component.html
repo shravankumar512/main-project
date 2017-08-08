@@ -1,0 +1,49 @@
+<div style="text-align: center;color:brown">
+    <h1 style="font-family: molot"><b>Movies Hub</b></h1>
+    <h4><b>popular movies of all time</b></h4>
+</div>
+
+<hr>
+
+<div>
+  <div class="container">
+    <div align="right">
+      <div class="">
+        <div class="form-group"  style="width:25%">
+            <input type="text" class="form-control" placeholder="Search.." [(ngModel)]='t1' value=""> 
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2" *ngFor="let movie of movies | moviePipe : t1" style="margin:10px">
+        
+        <a [routerLink]="['/moviedetailes',movie._id]">
+         
+          <div class="image-container">
+            <img [src]="movie.movie_image" class="image" alt="photo" >  
+           
+            <div class="middle">
+              <div class="branch-name">
+                {{movie.rating}}/10
+                <br>
+                {{movie.description}}
+              </div>
+            </div>
+          </div>
+          <div class="branch-name" title="{{movie.name}}">
+            {{movie.name}}
+          </div>
+        </a>
+        <!-- <div style="margin-top: 10px;  text-align: center">
+          <button type="button" class="btn btn-info btn-sm" (click) = "onEdit()">
+            <span class="glyphicon glyphicon-pencil"></span> edit
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="onRemove()">
+            <span class="glyphicon glyphicon-remove"></span> remove
+          </button> 
+        </div>-->
+      </div>
+    </div>
+    <hr>
+  </div>
+</div>
