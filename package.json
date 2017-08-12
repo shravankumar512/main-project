@@ -4,16 +4,27 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
-  "author": "",
+  "author": "Shravan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
     "bootstrap": "^4.0.0-alpha.6",
+    "co-mocha": "1.2.0",
     "cors": "^2.8.4",
+    "debug": "^3.0.0",
     "express": "^4.15.3",
+    "mocha": "^3.5.0",
     "mongojs": "^2.4.0",
-    "mongoose": "^4.11.3"
+    "mongoose": "^4.11.3",
+    "morgan": "^1.8.2",
+    "sinon": "3.2.0",
+    "sinon-chai": "2.12.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "chai-http": "^3.0.0",
+    "supertest": "^3.0.0"
   }
 }

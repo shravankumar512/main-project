@@ -6,6 +6,23 @@ const Director = require('../models/director')
 const User = require('../models/user')
 const mongojs =  require('mongojs')
 
+
+router.get('/',(req,res)=>{
+    res.json({
+        status:200,
+        msg:'success'
+    })
+})
+
+
+//retrieve users
+router.get('/user',(req,res,next)=>{
+    User.find(function(err,user){
+        res.json(user)
+    })
+})
+
+
 router.post('/login',(req,res)=>{
  
     User.findOne({username:req.body.username,password:req.body.password},(err,user)=>{
@@ -17,20 +34,25 @@ router.post('/login',(req,res)=>{
         }
         res.json({msg:'valid user',isvalid:true})
     })
-    
 })
 
-//retrieve users
-router.get('/user',(req,res,next)=>{
-    User.find(function(err,user){
-        res.json(user)
+router.put('/user/:id',(req,res,next)=>{
+
+    User.findByIdAndUpdate({_id:req.params.id},req.body,(err)=>{
+        if(err) res.json({msg:'Failed to update actor'+err})
+        else {
+            User.findOne({_id:req.params.id},(err,user)=>{
+                res.json(user)
+            })
+        }
     })
 })
+
 //delete user
 router.delete('/delete/:id',(req,res,next)=>{
     User.remove({_id:req.params.id},(err,result)=>{
         if(err) res.json(err)
-        else res.json(result)
+        else res.json({msg:'user deleted'})
     })
 })
 
