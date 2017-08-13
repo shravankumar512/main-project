@@ -1,18 +1,37 @@
-
-<div class="row">
-  <div class="col-xs-3">
+<div class="responsive">
+  <div class="gallery" style="width:20rem">
     <img src="{{movie.movie_image}}" class="image" alt="photo" >  
   </div>
-  <div class="col-xs-3">
-    <div class="text">
-      <h2><b>{{movie.name}}</b></h2>
-      <h3>{{movie.description}} </h3>
-      {{movie.rating}}/10<br>
-      {{movie.year}}
-    </div>
+</div>
+<div class="responsive">
+  <div class="text">
+    <h2><b>{{movie.name}}</b></h2>
+    <h3>{{movie.description}} </h3>
+    {{movie.rating}}/10<br>
+    {{movie.year}}
   </div>
 </div>
+<div class="clearfix"></div>
 <hr style="color:gray">
+
+<div class="responsive">
+   <div class="gallery">
+       <iframe src="https://www.youtube.com/embed/2cv2ueYnKjg" frameborder="0" allowfullscreen></iframe> 
+  </div>
+</div>
+<div class="responsive">
+   <div class="gallery">
+      <img src="http://cdn.collider.com/wp-content/uploads/2017/02/guardians-of-the-galaxy-2-michael-rooker.jpg" alt="1" id="myImg">
+    </div>
+</div>
+<div class="responsive">
+   <div class="gallery">
+        <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/03/13/11/guardians-of-the-galaxy.jpg" alt="2" id="myImg">
+      </div>
+</div>
+
+<div class="clearfix"></div>
+<hr>
 <div class="row">
   <div class="col-xs-4">
     
@@ -51,3 +70,5 @@
       </div>
   </div>
 </div>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/CkoWPp6hdY8?list=PLUoqTnNH-2XyNhhLuYrrmrmV46jVw6RHF" frameborder="0" allowfullscreen></iframe> -->
+

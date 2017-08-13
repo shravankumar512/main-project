@@ -14,8 +14,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-2" *ngFor="let movie of movies | moviePipe : t1" style="margin:10px">
+    <div class="responsive" *ngFor="let movie of movies | moviePipe : t1" >
+      <div class="gallery" style="margin:10px">
         
         <a [routerLink]="['/moviedetailes',movie._id]">
          
@@ -45,5 +45,6 @@
       </div>
     </div>
     <hr>
+    <div class="clearfix"></div>
   </div>
 </div>

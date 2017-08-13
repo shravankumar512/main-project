@@ -6,7 +6,33 @@
     height: 1000px;
     color: white
 }    */
- 
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
 input[type=text], input[type=number], input[type=password] {
     width: 100%;
     box-sizing: border-box;
@@ -53,7 +79,7 @@ a:hover {
 }
 .text {
   color: black;
-  font-size: 20px;
+  font-size: 2rem;
   font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
   text-align: center
 }

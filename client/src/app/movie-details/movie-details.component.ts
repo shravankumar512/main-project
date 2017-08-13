@@ -7,14 +7,14 @@ import { ActivatedRoute, Router } from "@angular/router";
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  styles: []
+  styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
   
 
 
   movie:IMovieType[] = [];
-
+  image_src:string;
   actor:IActor[];
   director: IDirector[];
     
@@ -58,6 +58,10 @@ export class MovieDetailsComponent implements OnInit {
         }
   
     })
+  }
+
+  getImage(src){
+    alert(src)
   }
 
 
